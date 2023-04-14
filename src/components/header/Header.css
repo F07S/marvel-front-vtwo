@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap");
+header {
+  /* background-color: white; */
+  border-bottom: 1px solid rgb(236, 221, 251);
+  width: 100%;
+  height: 80px;
+  margin: 0 auto;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 30px;
+}
+
+.logo {
+  width: 80px;
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+}
+
+nav button {
+  border: 1px solid rgba(23, 2, 43, 0);
+  background-color: rgba(23, 2, 43, 0);
+  padding: 5px;
+  border-radius: 5px;
+  font-family: "Montserrat", sans-serif;
+  /* font-weight: bold; */
+  color: rgb(236, 221, 251);
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+nav button:hover {
+  /* border-bottom: 1px solid rgb(93, 35, 147); */
+  color: rgb(205, 170, 237);
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.header-icon {
+  font-size: 15px;
+  color: rgb(236, 221, 251);
+}
+
+.header-icon:hover {
+  color: rgb(205, 170, 237);
+}
+.btn-icon-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-icon-header:hover {
+  color: rgb(205, 170, 237);
+}
+
+/* 851 px - Pixel 5 Landscape */
+/* *****************************************/
+@media (max-width: 915px) {
+  header {
+    width: 100%;
+    height: 50px;
+  }
+  .logo {
+    width: 60px;
+  }
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  nav button {
+    display: none;
+  }
+  .header-icon {
+    font-size: 18px;
+  }
+
+  .btn-icon-header-user {
+    display: none;
+  }
+}
+
+/* 393 px - Pixel 5 Portrait */
+/* *****************************************/
+
+@media (max-width: 393px) {
+  header {
+    width: 100%;
+    height: 50px;
+    font-size: 30px;
+  }
+  .logo {
+    width: 60px;
+  }
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  nav button {
+    display: none;
+  }
+
+  .btn-icon-header-user {
+    display: none;
+  }
+}
+
+/* 283 px - Galaxy Fold Portrait */
+/* *****************************************/
+
+@media (max-width: 280px) {
+  .logo {
+    width: 50px;
+  }
+  nav {
+    gap: 20px;
+  }
+  .header-icon {
+    font-size: 15px;
+  }
+}
