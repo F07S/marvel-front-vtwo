@@ -77,7 +77,7 @@ const Header = ({ setSavedFav, setSavedCom }) => {
           <div
             onClick={() => {
               handleToken(null);
-              setSavedFav("");
+              navigate("/login");
             }}
             className="btn-icon-header"
           >

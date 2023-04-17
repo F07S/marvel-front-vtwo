@@ -95,7 +95,7 @@ const Character = () => {
   ) : (
     <main className="c-main">
       <section className="c-page">
-        <Header setSavedFav={setSavedFav} setSavedCom={setSavedCom}></Header>
+        <Header></Header>
         {/* CHARACTER TITLE CONTAINER */}
         <section className="c-title-desc">
           <AnimatedText

@@ -86,7 +86,7 @@ const Characters = () => {
   return (
     <main className="characters-main">
       <section className="characters-page">
-        <Header setSavedFav={setSavedFav}></Header>
+        <Header></Header>
         {/* TITLE SEARCH CONTAINER */}
         <section className="search-title">
           <p className="page-title">MARVEL CHARACTERS</p>

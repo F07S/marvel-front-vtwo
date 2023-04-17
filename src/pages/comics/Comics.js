@@ -97,7 +97,7 @@ const Comics = () => {
   return (
     <main className="comics-main">
       <section className="comics-page">
-        <Header setSavedFav={setSavedFav}></Header>
+        <Header></Header>
         {/* MAIN IMAGE CONTAINER */}
         {/* TITLE SEARCH CONTAINER */}
         <section className="search-title-comics">

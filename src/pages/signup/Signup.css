@@ -76,7 +76,7 @@
 }
 
 .signup-box .input-box {
-  border-radius: 10px;
+  border-radius: 5px;
   border: none;
   outline: none;
   width: 100%;
@@ -98,7 +98,7 @@
   border: none;
   width: 103%;
   height: 8%;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .error-message {
@@ -115,4 +115,243 @@
 
 .signup-box .connect-here:hover {
   cursor: pointer;
+}
+
+/* *****************************************/
+/* MEDIA QUERY */
+/* *****************************************/
+
+/* 1180 px - iPad Air Landscape */
+/* *****************************************/
+
+@media (max-width: 1280px) {
+  /* ############################################################################################## */
+  /* GENERAL */
+  /* ############################################################################################## */
+  .signup-page {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .img-box {
+    height: 350px;
+  }
+  .img-box-login {
+    height: 350px;
+  }
+  .signup-box h1 {
+    margin-top: 10px;
+  }
+  .signup-box .input-box {
+    border-radius: 5px;
+  }
+  .signup-box button {
+    border-radius: 5px;
+    width: 105%;
+  }
+}
+
+/* 1024 px - iPad Mini Landscape */
+/* *****************************************/
+
+@media (max-width: 1024px) {
+  /* ############################################################################################## */
+  /* GENERAL */
+  /* ############################################################################################## */
+  .signup-page {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .img-box {
+    height: 300px;
+  }
+  .img-box-login {
+    height: 300px;
+  }
+  .signup-box {
+    gap: 15px;
+  }
+  .signup-box h1 {
+    font-size: 20px;
+  }
+  .signup-box .input-box {
+    border-radius: 5px;
+  }
+  .signup-box button {
+    border-radius: 5px;
+    font-size: 13px;
+  }
+  .signup-box .connect-here {
+    font-size: 11px;
+  }
+  .input-box::placeholder {
+    font-size: 12px;
+  }
+}
+
+/* 915 px - Samsung GS S20 Landscape */
+/* 914 px - Samsung GS A15 Landscape */
+/* 912 px - Surface Pro 7 Portrait */
+/* 896 px - iphone XR Landscape */
+/* 851 px - Pixel 5 Landscape */
+/* 844 px - iphone 12 Landscape */
+/* *****************************************/
+
+@media (max-width: 915px) {
+  /* ############################################################################################## */
+  /* GENERAL */
+  /* ############################################################################################## */
+  .signup-page {
+    width: 700px;
+    margin: 0 auto;
+  }
+  .signup-main {
+    height: 1400px;
+  }
+  .signup-box {
+    margin-top: 30px;
+    height: 200px;
+    gap: 7px;
+    border-radius: 10px;
+    border: 1px solid #f04555;
+    width: 30%;
+  }
+  .signup-box h1 {
+    font-size: 15px;
+    margin-top: 0px;
+  }
+  .signup-box .input-box {
+    border-radius: 3px;
+    height: 10%;
+  }
+  .signup-box button {
+    border-radius: 3px;
+    font-size: 11px;
+    width: 105%;
+    height: 10%;
+  }
+  .img-box {
+    display: none;
+  }
+  .img-box-login {
+    display: none;
+  }
+  .input-box::placeholder {
+    font-size: 11px;
+  }
+}
+
+/* 820 px - iPad Air Portrait */
+/* *****************************************/
+
+@media (max-width: 820px) {
+  /* ############################################################################################## */
+  /* GENERAL */
+  /* ############################################################################################## */
+
+  .signup-page {
+    width: 700px;
+    margin: 0 auto;
+  }
+  .signup-main {
+    height: 1400px;
+  }
+  .signup-box {
+    width: 40%;
+  }
+  .signup-box button {
+    width: 105%;
+  }
+}
+
+/* 768 px - iPad Mini Portrait */
+/* 740 px - Samsung GS8 landscape */
+/* *****************************************/
+
+@media (max-width: 768px) {
+  /* ############################################################################################## */
+  /* GENERAL */
+  /* ############################################################################################## */
+  .signup-page {
+    width: 680px;
+    margin: 0 auto;
+  }
+  .signup-box {
+    margin-top: 15px;
+  }
+}
+
+/* 667 px - iphone SE Landscape */
+/* 653 px - Galaxy Fold Landscape */
+/* *****************************************/
+
+@media (max-width: 667px) {
+  /* ############################################################################################## */
+  /* GENERAL */
+  /* ############################################################################################## */
+  .signup-main {
+    height: 500px;
+  }
+  .signup-page {
+    width: 600px;
+    margin: 0 auto;
+  }
+}
+
+/* 540 px - Suface Duo Portrait */
+/* *****************************************/
+
+@media (max-width: 540px) {
+  /* ############################################################################################## */
+  /* GENERAL */
+  /* ############################################################################################## */
+  .signup-page {
+    width: 500px;
+    margin: 0 auto;
+  }
+  .signup-main {
+    height: 100vh;
+  }
+}
+
+/* 414 px - iphone XR Portrait */
+/* 412 px - Samsung GS20 Portrait */
+/* 412 px - Samsung GS A15 Portrait */
+/* 393 px - Pixel 5 Portrait */
+/* 390 px - Iphone 12 Portrait */
+/* 360 px - Samsung GS8 Portrait */
+/* *****************************************/
+
+@media (max-width: 414px) {
+  /* ############################################################################################## */
+  /* GENERAL */
+  /* ############################################################################################## */
+  .signup-page {
+    width: 300px;
+    margin: 0 auto;
+  }
+  .signup-box {
+    width: 70%;
+    margin-top: 80px;
+    height: 300px;
+  }
+  .signup-box .input-box {
+    height: 8%;
+  }
+  .signup-box button {
+    height: 8%;
+  }
+}
+
+/* 283 px - Galaxy Fold Portrait */
+/* *****************************************/
+
+@media (max-width: 280px) {
+  /* ############################################################################################## */
+  /* GENERAL */
+  /* ############################################################################################## */
+
+  .signup-page {
+    width: 230px;
+    margin: 0 auto;
+  }
 }
