@@ -53,7 +53,7 @@ const Favourites = () => {
     };
 
     fetchFavourites();
-  }, []);
+  }, [data, token]);
 
   return (
     <main className="fav-main">

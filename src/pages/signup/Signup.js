@@ -18,6 +18,11 @@ const Signup = () => {
 
   // TOKEN MANAGEMENT
   const [token, setToken] = useState(Cookies.get("token") || null);
+
+  if (token) {
+    console.log("token exists");
+  }
+
   const handleToken = (token) => {
     if (token) {
       setToken(token);

@@ -176,6 +176,7 @@ const Character = () => {
                   <img
                     className="ch-img"
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZfhR3FCR6J5wjX4ZGXRmq7tVH6crUjcw5D8dcekt_C4wPyjwZuiYiNmqVhAI9w0h6DO4&usqp=CAU"
+                    alt="character"
                   ></img>
                 ) : (
                   <img
