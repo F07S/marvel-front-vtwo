@@ -1,18 +1,36 @@
+// HEADER IMPORT
 import Header from "../../components/header/Header";
+
+// ACTIVITY INDICATOR LIBRARY IMPORT
+import Bounce from "react-activity/dist/Bounce";
+import "react-activity/dist/library.css";
+
+// VECTOR ICON IMPORT
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+// PAGINATION PACKAGE IMPORT
 import ReactPaginate from "react-paginate";
+
+// LINE ELLIPSIS PACKAGE IMPORT
 import LinesEllipsis from "react-lines-ellipsis";
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import Cookies from "js-cookie";
+
+// ANIMATION PACKAGE IMPORT
 import { motion } from "framer-motion";
 
-// POP-UP NOTIFICATIONS PACKAGE
-//################################################################################################
+// POP-UP NOTIFICATIONS PACKAGE IMPORT
 import { ToastContainer } from "react-toastify";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
+// AXIOS IMPORT
+import axios from "axios";
+
+// REACT ELEMENTS IMPORT
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+//COOKIES PACKAGE IMPORT
+import Cookies from "js-cookie";
 
 const Characters = () => {
   // DATA USESTATE
@@ -103,7 +121,9 @@ const Characters = () => {
         </section>
 
         {isLoading ? (
-          <p>Loading...</p>
+          <div className="activity">
+            <Bounce className="activity-ind" />
+          </div>
         ) : (
           <motion.div className="character-container">
             {data.results.map((character) => {

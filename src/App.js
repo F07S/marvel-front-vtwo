@@ -27,6 +27,7 @@ import "./pages/character/Character.css";
 import "./pages/comic/Comic.css";
 import "./pages/signup/Signup.css";
 import "./pages/favourites/Favourites.css";
+import "react-activity/dist/Dots.css";
 
 // FONTAWESOME LIBRARY
 //###########################################################################

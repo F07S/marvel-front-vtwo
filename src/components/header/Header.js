@@ -1,3 +1,7 @@
+// ACTIVITY INDICATOR LIBRARY IMPORT
+import Dots from "react-activity/dist/Dots";
+import "react-activity/dist/library.css";
+
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -99,7 +103,9 @@ const Header = ({ setSavedFav, setSavedCom }) => {
           </div>
         )}
         {isLoading ? (
-          <p>Loading...</p>
+          <div className="btn-icon-header-user">
+            <Dots className="dots-activity" />
+          </div>
         ) : (
           token &&
           data.map((user) => {

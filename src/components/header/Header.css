@@ -59,6 +59,15 @@ nav button:hover {
   color: rgb(205, 170, 237);
 }
 
+.btn-icon-header-user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dots-activity {
+  color: rgb(236, 221, 251);
+}
+
 /* 851 px - Pixel 5 Landscape */
 /* *****************************************/
 @media (max-width: 915px) {
