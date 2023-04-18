@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const Header = ({ setSavedFav, setSavedCom }) => {
+const Header = () => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   // NAVIGATE
@@ -29,7 +29,10 @@ const Header = ({ setSavedFav, setSavedCom }) => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get(`http://localhost:4500/user`);
+        const response = await axios.get(
+          `https://site--marvel-backend--phfc9s47kbj5.code.run/user`
+          // `http://localhost:4500/user`
+        );
         // console.log(response.data.user);
         setData(response.data.user);
         setIsLoading(false);

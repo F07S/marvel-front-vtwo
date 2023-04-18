@@ -35,7 +35,10 @@ const Favourites = () => {
   useEffect(() => {
     const fetchFavourites = async () => {
       try {
-        const response = await axios.get(`http://localhost:4500/user`);
+        const response = await axios.get(
+          `https://site--marvel-backend--phfc9s47kbj5.code.run/user`
+          // `http://localhost:4500/user`
+        );
         console.log(response.data);
         const foundUser = response.data.user.find(
           (user) => user.token === token
@@ -82,7 +85,8 @@ const Favourites = () => {
                               try {
                                 console.log(userId);
                                 const response = await axios.put(
-                                  `http://localhost:4500/user/deletefav/${userId}`,
+                                  `https://site--marvel-backend--phfc9s47kbj5.code.run/user/deletefav/${userId}`,
+                                  // `http://localhost:4500/user/deletefav/${userId}`,
 
                                   {
                                     id: fav.id,
@@ -91,7 +95,7 @@ const Favourites = () => {
                                   }
                                 );
                                 const responseUpdate = await axios.get(
-                                  `http://localhost:4500/user`
+                                  `https://site--marvel-backend--phfc9s47kbj5.code.run/user`
                                 );
                                 console.log(responseUpdate.data);
                                 const foundUser = responseUpdate.data.user.find(
@@ -154,7 +158,8 @@ const Favourites = () => {
                               try {
                                 console.log(userId);
                                 const response = await axios.put(
-                                  `http://localhost:4500/user/deletecomic/${userId}`,
+                                  `https://site--marvel-backend--phfc9s47kbj5.code.run/user/deletecomic/${userId}`,
+                                  // `http://localhost:4500/user/deletecomic/${userId}`,
 
                                   {
                                     id: fav.id,
@@ -163,7 +168,8 @@ const Favourites = () => {
                                   }
                                 );
                                 const responseUpdate = await axios.get(
-                                  `http://localhost:4500/user`
+                                  `https://site--marvel-backend--phfc9s47kbj5.code.run/user`
+                                  // `http://localhost:4500/user`
                                 );
                                 console.log(responseUpdate.data);
                                 const foundUser = responseUpdate.data.user.find(

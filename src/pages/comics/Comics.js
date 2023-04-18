@@ -63,7 +63,8 @@ const Comics = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4500/comics?title=${search}&skip=${skip}`
+          `https://site--marvel-backend--phfc9s47kbj5.code.run/comics?title=${search}&skip=${skip}`
+          // `http://localhost:4500/comics?title=${search}&skip=${skip}`
         );
         // console.log(response.data.count);
         setCount(response.data.count);
@@ -76,7 +77,10 @@ const Comics = () => {
     };
     const fetchUser = async () => {
       try {
-        const response = await axios.get(`http://localhost:4500/user`);
+        const response = await axios.get(
+          `https://site--marvel-backend--phfc9s47kbj5.code.run/user`
+          // `http://localhost:4500/user`
+        );
         const foundUser = response.data.user.find(
           (user) => user.token === token
         );
@@ -158,7 +162,8 @@ const Comics = () => {
                           try {
                             // console.log(userId);
                             const response = await axios.put(
-                              `http://localhost:4500/user/deletecomic/${userId}`,
+                              `https://site--marvel-backend--phfc9s47kbj5.code.run/user/deletecomic/${userId}`,
+                              // `http://localhost:4500/user/deletecomic/${userId}`,
 
                               {
                                 id: comic._id,
@@ -185,7 +190,8 @@ const Comics = () => {
                           toast(`${comic.title} added to favourites!`);
                           try {
                             const response = await axios.put(
-                              `http://localhost:4500/user/addcomic/${userId}`,
+                              `https://site--marvel-backend--phfc9s47kbj5.code.run/user/addcomic/${userId}`,
+                              // `http://localhost:4500/user/addcomic/${userId}`,
 
                               {
                                 id: comic._id,
@@ -291,7 +297,8 @@ const Comics = () => {
                               try {
                                 // console.log(userId);
                                 const response = await axios.put(
-                                  `http://localhost:4500/user/deletecomic/${userId}`,
+                                  `https://site--marvel-backend--phfc9s47kbj5.code.run/user/deletecomic/${userId}`,
+                                  // `http://localhost:4500/user/deletecomic/${userId}`,
 
                                   {
                                     id: comic._id,
@@ -317,7 +324,8 @@ const Comics = () => {
                               toast(`${comic.title} added to favourites!`);
                               try {
                                 const response = await axios.put(
-                                  `http://localhost:4500/user/addcomic/${userId}`,
+                                  `https://site--marvel-backend--phfc9s47kbj5.code.run/user/addcomic/${userId}`,
+                                  // `http://localhost:4500/user/addcomic/${userId}`,
 
                                   {
                                     id: comic._id,
@@ -346,7 +354,6 @@ const Comics = () => {
                           </motion.button>
                         )}
 
-                        {/* <Link to={`/character/${character._id}`}></Link> */}
                         <motion.button
                           onClick={() => {
                             navigate(`/comic/${comic._id}`);

@@ -47,7 +47,10 @@ const Comic = () => {
   useEffect(() => {
     const fetchComic = async () => {
       try {
-        const response = await axios.get(`http://localhost:4500/comic/${id}`);
+        const response = await axios.get(
+          `https://site--marvel-backend--phfc9s47kbj5.code.run/comic/${id}`
+          // `http://localhost:4500/comic/${id}`
+        );
         // console.log(response.data);
         setData(response.data);
         setIsLoading(false);
@@ -58,7 +61,10 @@ const Comic = () => {
 
     const fetchUser = async () => {
       try {
-        const response = await axios.get(`http://localhost:4500/user`);
+        const response = await axios.get(
+          `https://site--marvel-backend--phfc9s47kbj5.code.run/user`
+          // `http://localhost:4500/user`
+        );
         // console.log(response.data);
         const foundUser = response.data.user.find(
           (user) => user.token === token
@@ -163,7 +169,8 @@ const Comic = () => {
                       try {
                         // console.log(userId);
                         const response = await axios.put(
-                          `http://localhost:4500/user/deletecomic/${userId}`,
+                          `https://site--marvel-backend--phfc9s47kbj5.code.run/user/deletecomic/${userId}`,
+                          // `http://localhost:4500/user/deletecomic/${userId}`,
 
                           {
                             id: data._id,
@@ -190,7 +197,8 @@ const Comic = () => {
                       toast(`${data.title} added to favourites!`);
                       try {
                         const response = await axios.put(
-                          `http://localhost:4500/user/addcomic/${userId}`,
+                          `https://site--marvel-backend--phfc9s47kbj5.code.run/user/addcomic/${userId}`,
+                          // `http://localhost:4500/user/addcomic/${userId}`,
 
                           {
                             id: data._id,
