@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const Home = () => {
   const navigate = useNavigate();
-  const [videoStarted, setVideoStarted] = useState(true);
+  const [videoStarted, setVideoStarted] = useState(false);
 
   const videoFadeOut = () => {
     setTimeout(() => {
@@ -25,6 +25,7 @@ const Home = () => {
           transition: "opacity, 3s ease-in-out",
         }}
         onPlaying={() => {
+          setVideoStarted(true);
           videoFadeOut();
           setTimeout(() => {
             navigate("/characters");
@@ -33,22 +34,21 @@ const Home = () => {
       ></video>
 
       <section className="home-animation">
-        {!videoStarted ||
-          (videoStarted && (
-            <AnimatedText
-              className="marvel"
-              type="words"
-              interval={0.01}
-              duration={7.5}
-              animation={{
-                y: "100px",
-                ease: "ease-in",
-                scale: 8.19,
-              }}
-            >
-              MARVEL
-            </AnimatedText>
-          ))}
+        {videoStarted && (
+          <AnimatedText
+            className="marvel"
+            type="words"
+            interval={0.01}
+            duration={7.5}
+            animation={{
+              y: "100px",
+              ease: "ease-in",
+              scale: 8.19,
+            }}
+          >
+            MARVEL
+          </AnimatedText>
+        )}
       </section>
     </main>
   );
