@@ -1,5 +1,7 @@
 // HEADER IMPORT
 import Header from "../../components/header/Header";
+import StarFavBtnCom from "../../components/comicsPageBtns/StarFavBtnCom";
+import RegFavBtnCom from "../../components/comicsPageBtns/RegFavBtnCom";
 
 // ACTIVITY INDICATOR LIBRARY IMPORT
 import Bounce from "react-activity/dist/Bounce";
@@ -20,7 +22,6 @@ import { motion } from "framer-motion";
 // POP-UP NOTIFICATIONS PACKAGE
 //################################################################################################
 import { ToastContainer } from "react-toastify";
-import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 // AXIOS IMPORT
@@ -153,71 +154,15 @@ const Comics = () => {
                   className="comics-card"
                 >
                   <motion.div className="comImg-btn">
-                    {token && favourite ? (
-                      <motion.button
-                        // className={favourite ? "star-btn-gold" : "star-btn"}
-                        className="star-btn-com-gold"
-                        layout="position"
-                        onClick={async () => {
-                          try {
-                            // console.log(userId);
-                            const response = await axios.put(
-                              `https://site--marvel-backend--phfc9s47kbj5.code.run/user/deletecomic/${userId}`,
-                              // `http://localhost:4500/user/deletecomic/${userId}`,
-
-                              {
-                                id: comic._id,
-                                name: comic.title,
-                                image: comic.image,
-                              }
-                            );
-
-                            setData(data);
-                            console.log(response);
-                            setSavedFav(response.data.comics);
-                          } catch (error) {
-                            console.log(error.response);
-                          }
-                        }}
-                      >
-                        <FontAwesomeIcon icon="star" />
-                      </motion.button>
-                    ) : (
-                      <motion.button
-                        className="star-btn-com"
-                        layout="position"
-                        onClick={async () => {
-                          toast(`${comic.title} added to favourites!`);
-                          try {
-                            const response = await axios.put(
-                              `https://site--marvel-backend--phfc9s47kbj5.code.run/user/addcomic/${userId}`,
-                              // `http://localhost:4500/user/addcomic/${userId}`,
-
-                              {
-                                id: comic._id,
-                                name: comic.title,
-                                image:
-                                  comic.thumbnail.path +
-                                  "." +
-                                  comic.thumbnail.extension,
-                              }
-                            );
-                            // console.log(response);
-                            setSavedFav(response.data.comics);
-                          } catch (error) {
-                            console.log(error.message);
-                            if (
-                              (error.response.data.message =
-                                "Missing parameters")
-                            ) {
-                              navigate("/login");
-                            }
-                          }
-                        }}
-                      >
-                        <FontAwesomeIcon icon="star" />
-                      </motion.button>
-                    )}
+                    <StarFavBtnCom
+                      token={token}
+                      favourite={favourite}
+                      setData={setData}
+                      data={data}
+                      setSavedFav={setSavedFav}
+                      comic={comic}
+                      userId={userId}
+                    ></StarFavBtnCom>
 
                     {comic.thumbnail.path ===
                     "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" ? (
@@ -290,69 +235,14 @@ const Comics = () => {
                         </p>
                       )}
                       <motion.div layout="position" className="character-btns">
-                        {favourite ? (
-                          <motion.button
-                            style={{ color: "gold" }}
-                            onClick={async () => {
-                              try {
-                                // console.log(userId);
-                                const response = await axios.put(
-                                  `https://site--marvel-backend--phfc9s47kbj5.code.run/user/deletecomic/${userId}`,
-                                  // `http://localhost:4500/user/deletecomic/${userId}`,
-
-                                  {
-                                    id: comic._id,
-                                    name: comic.title,
-                                    image: comic.image,
-                                  }
-                                );
-
-                                setData(data);
-                                console.log(response);
-                                setSavedFav(response.data.comics);
-                              } catch (error) {
-                                console.log(error.response);
-                              }
-                            }}
-                          >
-                            <FontAwesomeIcon icon="star" />
-                            <span> saved to favourites</span>
-                          </motion.button>
-                        ) : (
-                          <motion.button
-                            onClick={async () => {
-                              toast(`${comic.title} added to favourites!`);
-                              try {
-                                const response = await axios.put(
-                                  `https://site--marvel-backend--phfc9s47kbj5.code.run/user/addcomic/${userId}`,
-                                  // `http://localhost:4500/user/addcomic/${userId}`,
-
-                                  {
-                                    id: comic._id,
-                                    name: comic.title,
-                                    image:
-                                      comic.thumbnail.path +
-                                      "." +
-                                      comic.thumbnail.extension,
-                                  }
-                                );
-                                // console.log(response);
-                                setSavedFav(response.data.comics);
-                              } catch (error) {
-                                console.log(error.message);
-                                if (
-                                  (error.response.data.message =
-                                    "Missing parameters")
-                                ) {
-                                  navigate("/login");
-                                }
-                              }
-                            }}
-                          >
-                            <FontAwesomeIcon icon="star" />
-                            <span> add to favourites</span>
-                          </motion.button>
-                        )}
+                        <RegFavBtnCom
+                          favourite={favourite}
+                          setData={setData}
+                          data={data}
+                          setSavedFav={setSavedFav}
+                          comic={comic}
+                          userId={userId}
+                        ></RegFavBtnCom>
 
                         <motion.button
                           onClick={() => {
