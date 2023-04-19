@@ -55,7 +55,7 @@ const Login = () => {
 
       if (token) {
         handleToken(token);
-        navigate("/characters");
+        navigate("/");
       }
     } catch (error) {
       console.log(error.response.data);

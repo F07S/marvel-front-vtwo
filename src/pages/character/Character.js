@@ -88,9 +88,7 @@ const Character = () => {
           (user) => user.token === token
         );
         setUserId(foundUser._id);
-        if (token) {
-          setSavedCom(foundUser.comics);
-        }
+        setSavedCom(foundUser.comics);
 
         const favourite = foundUser.favourites.find((fav) => fav.id === id);
         if (favourite) {
@@ -258,14 +256,17 @@ const Character = () => {
                   </p>
                 ) : (
                   data.comics.map((comics) => {
-                    const favCom =
-                      token && savedCom.find((fav) => fav.id === comics._id);
-                    console.log(favCom);
+                    // console.log(typeof savedCom);
+                    const favourite =
+                      savedCom &&
+                      token &&
+                      [...savedCom].find((fav) => fav.id === comics._id);
+                    // console.log(favCom);
                     return (
                       <div>
                         <div className="c-card">
                           <div className="com-img-button">
-                            {favCom ? (
+                            {favourite ? (
                               <button
                                 className="btn-com-gold"
                                 layout="position"
@@ -284,7 +285,7 @@ const Character = () => {
                                     );
 
                                     setData(data);
-                                    console.log(response);
+                                    // console.log(response);
                                     setSavedCom(response.data.comics);
                                   } catch (error) {
                                     console.log(error.response);

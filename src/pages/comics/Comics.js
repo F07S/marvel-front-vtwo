@@ -144,8 +144,11 @@ const Comics = () => {
         ) : (
           <motion.div className="comics-container">
             {data.results.map((comic) => {
+              // const favourite =
+              //   token && savedFav.find((fav) => fav.id === comic._id);
               const favourite =
-                token && savedFav.find((fav) => fav.id === comic._id);
+                token && [...savedFav].find((fav) => fav.id === comic._id);
+
               return (
                 <motion.div
                   key={comic._id}
@@ -155,7 +158,6 @@ const Comics = () => {
                 >
                   <motion.div className="comImg-btn">
                     <StarFavBtnCom
-                      token={token}
                       favourite={favourite}
                       setData={setData}
                       data={data}
@@ -174,6 +176,9 @@ const Comics = () => {
                           layout="position"
                           src={imgPlaceholder}
                           alt="comic placeholder"
+                          onClick={() => {
+                            setIsOpen(!isOpen);
+                          }}
                         ></motion.img>
                       </motion.div>
                     ) : (
@@ -190,6 +195,9 @@ const Comics = () => {
                           }
                           onError={onImgError}
                           alt="character"
+                          onClick={() => {
+                            setIsOpen(!isOpen);
+                          }}
                         />
                       </motion.div>
                     )}

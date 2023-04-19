@@ -21,7 +21,6 @@ import { motion } from "framer-motion";
 
 // POP-UP NOTIFICATIONS PACKAGE IMPORT
 import { ToastContainer } from "react-toastify";
-
 import "react-toastify/dist/ReactToastify.css";
 
 // AXIOS IMPORT
@@ -133,8 +132,9 @@ const Characters = () => {
         ) : (
           <motion.div className="character-container">
             {data.results.map((character) => {
+              // console.log(typeof savedFav);
               const favourite =
-                token && savedFav.find((fav) => fav.id === character._id);
+                token && [...savedFav].find((fav) => fav.id === character._id);
 
               return (
                 <motion.div
@@ -145,7 +145,6 @@ const Characters = () => {
                 >
                   <motion.div className="chImg-btn" layout>
                     <StarFavBtnCh
-                      token={token}
                       favourite={favourite}
                       setData={setData}
                       data={data}
@@ -164,6 +163,9 @@ const Characters = () => {
                           layout="position"
                           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZfhR3FCR6J5wjX4ZGXRmq7tVH6crUjcw5D8dcekt_C4wPyjwZuiYiNmqVhAI9w0h6DO4&usqp=CAU"
                           alt="character"
+                          onClick={() => {
+                            setIsOpen(!isOpen);
+                          }}
                         ></motion.img>
                       </motion.div>
                     ) : (
@@ -179,6 +181,9 @@ const Characters = () => {
                             character.thumbnail.extension
                           }
                           alt="character"
+                          onClick={() => {
+                            setIsOpen(!isOpen);
+                          }}
                         />
                       </motion.div>
                     )}

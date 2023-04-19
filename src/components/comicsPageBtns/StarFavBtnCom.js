@@ -12,7 +12,6 @@ import { useNavigate } from "react-router-dom";
 // VECTOR ICON IMPORT
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const StarFavBtnCom = ({
-  token,
   favourite,
   setData,
   data,
@@ -24,7 +23,7 @@ const StarFavBtnCom = ({
   const navigate = useNavigate();
   return (
     <>
-      {token && favourite ? (
+      {favourite ? (
         <motion.button
           // className={favourite ? "star-btn-gold" : "star-btn"}
           className="star-btn-com-gold"

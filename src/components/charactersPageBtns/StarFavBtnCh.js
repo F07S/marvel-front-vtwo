@@ -13,7 +13,6 @@ import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const StarFavBtnCh = ({
-  token,
   favourite,
   setData,
   data,
@@ -25,7 +24,7 @@ const StarFavBtnCh = ({
   const navigate = useNavigate();
   return (
     <>
-      {token && favourite ? (
+      {favourite ? (
         <motion.button
           // className={favourite ? "star-btn-gold" : "star-btn"}
           className="star-btn-gold"
@@ -45,7 +44,7 @@ const StarFavBtnCh = ({
               );
 
               setData(data);
-              console.log(response);
+              // console.log(response);
               setSavedFav(response.data.favourites);
             } catch (error) {
               console.log(error.response);
