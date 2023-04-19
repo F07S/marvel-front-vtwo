@@ -54,7 +54,7 @@ const Header = () => {
       <nav>
         <div
           onClick={() => {
-            navigate("/characters");
+            navigate("/");
           }}
           className="btn-icon-header"
         >

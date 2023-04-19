@@ -3,7 +3,7 @@ import "./App.css";
 
 // PAGES
 //###########################################################################
-import Home from "./pages/home/Home";
+
 import Characters from "./pages/characters/Characters";
 import Comics from "./pages/comics/Comics";
 import Character from "./pages/character/Character";
@@ -18,7 +18,7 @@ import Favourites from "./pages/favourites/Favourites";
 
 // CSS
 //###########################################################################
-import "./pages/home/Home.css";
+
 import "./assets/css/font.css";
 import "./pages/characters/Characters.css";
 import "./components/header/Header.css";
@@ -63,8 +63,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home></Home>}></Route>
-        <Route path="/characters" element={<Characters></Characters>}></Route>
+        <Route path="/" element={<Characters></Characters>}></Route>
         <Route path="/comics" element={<Comics></Comics>}></Route>
         <Route path="/character/:id" element={<Character></Character>}></Route>
         <Route path="/comic/:id" element={<Comic></Comic>}></Route>
