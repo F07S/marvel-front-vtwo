@@ -1,6 +1,6 @@
 import AnimatedText from "react-animated-text-content";
 import { useNavigate } from "react-router-dom";
-import videoBg from "../../assets/video/marvel.mp4";
+import videoBg from "../../assets/video/marvel-low.mov";
 import { useState } from "react";
 
 const Home = () => {
